@@ -1,5 +1,5 @@
 pipeline {
-  docker { image 'python:3.8-buster' }
+  agent any
   stages {
     stage('version') {
       steps {
