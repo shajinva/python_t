@@ -1,15 +1,19 @@
 pipeline {
-  agent any
+  docker { image 'python:3.8-buster' }
   stages {
-    stage('version') {
-      steps {
-        sh 'python --version'
-      }
+    stage('install dependencies') {
+        steps {
+            script {
+            sh """ pip install -r requirements.txt """
+        }
+        }
     }
-    stage('hello') {
+     stage('hello') {
       steps {
         sh 'python hello.py'
       }
     }
+   }
+   
   }
 }
