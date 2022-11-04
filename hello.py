@@ -7,7 +7,10 @@ class Hello_Name():
     def run_hello(self):
         print("my name is", self.name)
         
-obj =  Hello_Name("shajin")
+    def run_hello(self):
+        print(self.name)
+        
+obj =  Hello_Name("shajin",45)
 
 obj.run_hello()      
             
